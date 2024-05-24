@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<center>
+  <title>Payment</title>
+  <link rel="icon" href="icon.jpg" />
+  <link rel="stylesheet" href="payments.css" />
+  <meta charset="utf-8" />
+  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /* CSS styles for the payment form */
+    /* ... (your existing styles) ... */
+
+    /* Changes to improve readability and style */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      margin: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-image: linear-gradient(to top right,smoke 30%,red);
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .icon img {
+
+      width: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+.icon{
+padding-left:170px;
+}
+    .txt {
+	 text-align: center;
+	
+      font-size: 32px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #333;
+      margin: 20px 0;
+    }
+
+    .payment {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 30px;
+      padding: 20px;
+      border: 20px solid #ccc;
+      border-radius: 8px;
+      background-color:red;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .bill {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .option {
+      text-align: center;
+    }
+
+    .submit {
+      text-align: center;
+    }
+
+    .submit button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+ 
+    <div class="icon">
+      <img src="payment-icon.jpg" alt="Icon" />
+     <div class="txt">Payment</div>
+    </div>
+    <!-- Navigation if needed -->
+  </header>
+
+  <section class="payment">
+    <div class="bill">
+      <h2>Available Plans</h2>
+      <p>Premium: Rs.5000</p>
+      <p>Normal: Rs.2500</p>
+      <p>Enter the Plan type to proceed (premium/normal):</p>
+      <input type="text" id="p"></br>
+	    <img src="card.jpg" width="300px" height="150px" />
+    </div>
+   
+   <div class="option">
+      <form name="bill_form">
+        <h2>Choose Your Payment Option</h2>
+        <input type="radio" id="debit" name="payment">
+        <label for="debit">Debit Card</label><br>
+        <input type="radio" id="upi" name="payment">
+      <label for="upi">UPI</label><br>
+	
+		Card Number/UPI ID: <input type="text" id="c"><br>
+		Enter Amount: <input type="text" id="amount">
+        <div class="submit">
+          <button onclick="plan()" id="btn-s">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    function plan() {
+      var p = document.getElementById("p").value;
+      if (p.toLowerCase() === "premium") {
+        alert("Congratulations! You have selected the premium plan for Rs.5000.");
+      } else if (p.toLowerCase() === "normal") {
+        alert("Congratulations! You have selected the normal plan for Rs.2500.");
+      } else {
+        alert("Please enter a valid plan type (premium/normal).");
+      }
+    }
+
+  </script>
+  </center>
+</body>
+</html>
